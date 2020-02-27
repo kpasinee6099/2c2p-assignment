@@ -1,4 +1,5 @@
 ﻿using BasicWebService.Models;
+using BasicWebService.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,19 @@ namespace BasicWebService.Service
 {
     public class ValidateCard
     {
-        public bool isComplete(CardInfo card)
+        public string isEnrolled(CardInfo card)
         {
             string resultmessage = string.Empty;
             bool numFlag = false;
             bool expFlag = false;
 
-            if ( card.expDate.Length == 6 )
+            if (card.expDate.Length == 6)
             {
                 string month = card.expDate.Substring(0, 2);
                 string year = card.expDate.Substring(2, 4);
-                if ( Regex.IsMatch(card.expDate, @"^\d+$") )
+                if (Regex.IsMatch(card.expDate, @"^\d+$"))
                 {
-                    if ( ( year.StartsWith("2") && year[1] == '0' ) && ( Convert.ToInt16(month) > 0 && Convert.ToInt16(month) <= 12 ) )
+                    if ((year.StartsWith("2") && year[1] == '0') && (Convert.ToInt16(month) > 0 && Convert.ToInt16(month) <= 12))
                     {
                         expFlag = true;
                     }
@@ -40,7 +41,7 @@ namespace BasicWebService.Service
                 expFlag = false;
             }
 
-            if ( Regex.IsMatch(card.cardNum, @"^\d+$") && ( card.cardNum.Length > 0 && ( card.cardNum.Length == 15 || card.cardNum.Length == 16 ) ) )
+            if (Regex.IsMatch(card.cardNum, @"^\d+$") && (card.cardNum.Length > 0 && (card.cardNum.Length == 15 || card.cardNum.Length == 16)))
             {
                 numFlag = true;
             }
@@ -49,20 +50,42 @@ namespace BasicWebService.Service
                 numFlag = false;
             }
 
-            if ( numFlag && expFlag )
+            if (numFlag && expFlag)
             {
-                resultmessage = identifyCard(card);
-                return true;
+                DBHandle db = new DBHandle();
+                bool isExist = db.isExistCard(card);
+
+                if (!isExist)
+                {
+                    return "Does not exist";
+                }
+                else
+                {
+                    resultmessage = identifyCard(card);
+                    return resultmessage;
+                }
+            }
+            else if(!expFlag)
+            {
+                return "Invalid Expire Date";
+            }
+            else if (!numFlag)
+            {
+                return "Invalid Card Numbers";
             }
             else
             {
-                return false;
-            }                   
+                return "Invalid Card";
+            }
         }
-
         public string identifyCard( CardInfo card )
         {
-            CardResult result = new CardResult();
+            CardToDB result = new CardToDB();
+            result.cardNum = card.cardNum;
+            result.expDate = card.expDate;
+            result.cardStat = "Invalid";
+            result.cardType = "Unknown";
+
             string tmpYear = card.expDate.Substring(2);
             int year = int.Parse(tmpYear);
             
@@ -116,6 +139,5 @@ namespace BasicWebService.Service
             }
             return result.cardStat + " " + result.cardType;
         }
-    }
-        
+    }      
 }
