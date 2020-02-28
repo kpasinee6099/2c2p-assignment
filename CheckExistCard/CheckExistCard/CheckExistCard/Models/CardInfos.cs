@@ -11,4 +11,11 @@ namespace CheckExistCard.Models
         public string expDate { get; set; }
 
     }
+    public class CardInfoStat
+    {
+        public string cardType { get; set; }
+        public string cardStat { get; set; }
+
+    }
+
 }

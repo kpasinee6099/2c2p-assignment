@@ -10,8 +10,9 @@
 namespace CheckExistCard
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class isExistCard_Result
+    public partial class CardRegisted
     {
         public string CardNum { get; set; }
         public string CardType { get; set; }
