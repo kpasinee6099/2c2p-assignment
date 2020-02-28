@@ -10,7 +10,7 @@ namespace BasicWebService.Service
 {
     public class ValidateCard
     {
-        public string isEnrolled(CardInfo card)
+        public string isEnrolled(CardInfos card)
         {
             string resultmessage = string.Empty;
             bool numFlag = false;
@@ -54,7 +54,6 @@ namespace BasicWebService.Service
             {
                 DBHandle db = new DBHandle();
                 bool isExist = db.isExistCard(card);
-
                 if (!isExist)
                 {
                     return "Does not exist";
@@ -78,13 +77,13 @@ namespace BasicWebService.Service
                 return "Invalid Card";
             }
         }
-        public string identifyCard( CardInfo card )
+        public string identifyCard( CardInfos card )
         {
-            CardToDB result = new CardToDB();
-            result.cardNum = card.cardNum;
-            result.expDate = card.expDate;
-            result.cardStat = "Invalid";
-            result.cardType = "Unknown";
+            CardInfo result = new CardInfo();
+            result.CardNum = card.cardNum;
+            result.ExpDate = card.expDate;
+            result.CardStat = "Invalid";
+            result.CardType = "Unknown";
 
             string tmpYear = card.expDate.Substring(2);
             int year = int.Parse(tmpYear);
@@ -96,48 +95,48 @@ namespace BasicWebService.Service
                     int digit = card.cardNum.Length;
                     if (digit == 16)
                     {
-                        result.cardType = "JCB";
-                        result.cardStat = "Valid";
+                        result.CardType = "JCB";
+                        result.CardStat = "Valid";
                     }
                     else if (digit == 15)
                     {
-                        result.cardType = "Amex";
+                        result.CardType = "Amex";
                     }
                     else
                     {
-                        result.cardType = "Unknown";
+                        result.CardType = "Unknown";
                     }
                     break;
 
                 case '4':
-                    result.cardType = "Visa";
+                    result.CardType = "Visa";
                     if (year % 4 == 0)
                     {
-                        result.cardStat = "Valid";
+                        result.CardStat = "Valid";
                     }
                     break;
 
                 case '5':
-                    result.cardType = "MasterCard";
+                    result.CardType = "MasterCard";
                     for (int i = 2; i <= year; i++)
                     {
                         if (year % i == 0)
                         {
-                            result.cardStat = "Invalid";
+                            result.CardStat = "Invalid";
                         }
                         else
                         {
-                            result.cardStat = "Valid";
+                            result.CardStat = "Valid";
                         }
                     }
                     break;
 
                 default:
-                    result.cardType = "Unknown";
+                    result.CardType = "Unknown";
                     break;
 
             }
-            return result.cardStat + " " + result.cardType;
+            return result.CardStat + " " + result.CardType;
         }
     }      
 }

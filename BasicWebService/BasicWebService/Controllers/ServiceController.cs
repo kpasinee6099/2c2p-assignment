@@ -10,16 +10,13 @@ using System.Web.Http;
 
 
 namespace BasicWebService.Controllers
-{
-    /// <summary>
-    /// jjj
-    /// </summary>
+{ 
     public class ServiceController : ApiController
     {
         [HttpGet]
-        [Route("api/GetCard", Name = "GetCard")]
+        [Route("api/GetEnrollCard", Name = "GetEnrollCard")]
 
-        public string GetCard([FromUri]CardInfo tmpCard)
+        public string GetEnrollCard([FromUri]CardInfos tmpCard)
         {
             ValidateCard card = new ValidateCard();
             string isEnroll = card.isEnrolled(tmpCard);

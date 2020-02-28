@@ -20,23 +20,17 @@ namespace BasicWebService.Repository
             cnn.Open();
         }
 
-        public bool isExistCard(CardInfo card)
-        {
+        public bool isExistCard(CardInfos card)
+        { 
             ConnectionDB();
-            SqlDataReader rdr = null;
-            SqlCommand cmd = new SqlCommand("isExistCard", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add(new SqlParameter("@CardNum", card.cardNum));
-            rdr = cmd.ExecuteReader();
-            if (!rdr.HasRows)
-            {
-                return false;
-            }
-            else
+            CARDEntities nd = new CARDEntities();
+            var existCardInfo = nd.ExistCard(card.cardNum);
+            foreach (var rec in existCardInfo)
             {
                 return true;
-            }            
-        } 
+            }
+            return false;
+
+        }
     }
 }
