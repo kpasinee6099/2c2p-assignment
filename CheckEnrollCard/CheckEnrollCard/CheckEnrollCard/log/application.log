@@ -91,3 +91,6 @@ The statement has been terminated.
 2020-03-02 15:06:05,910 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
 2020-03-02 15:06:12,826 DEBUG CheckEnrollCard.Service.ValidateCard - Expire date : 022018 is not allowed, month 02 / year 2018
 2020-03-02 15:06:17,040 INFO CheckEnrollCard.Controllers.ValuesController - Can not enrolling the card
+2020-03-02 16:18:43,020 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-02 16:18:46,496 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-02 16:18:56,352 DEBUG CheckEnrollCard.Controllers.ValuesController - Card 321654987412589 is existing

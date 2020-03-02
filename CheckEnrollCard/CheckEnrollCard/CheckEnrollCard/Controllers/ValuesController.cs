@@ -17,25 +17,35 @@ namespace CheckEnrollCard.Controllers
         [Route("api/isEnrolled", Name = "isEnrolled")]
         public string isEnrolled(string card)
         {
-            log.Info("request check existing card");
-            ValidateCard vl = new ValidateCard();
-            bool isCardNum = vl.isCardNum(card);
-            if (isCardNum)
+            try
             {
-                CARDEntities nd = new CARDEntities();
-                var existCardInfo = nd.isExistCard(card);
-                foreach (var rec in existCardInfo)
+                log.Info("request check existing card");
+                ValidateCard vl = new ValidateCard();
+                bool isCardNum = vl.isCardNum(card);
+                if (isCardNum)
                 {
-                    log.Debug(string.Format("Card {0} is existing", card));
-                    return string.Format("Card {0} is existing", card);
+                    CARDEntities nd = new CARDEntities();
+                    var existCardInfo = nd.isExistCard(card);
+                    foreach (var rec in existCardInfo)
+                    {
+                        log.Debug(string.Format("Card {0} is existing", card));
+                        return string.Format("Card {0} is existing", card);
+                    }
+                    log.Debug(string.Format("Card {0} is not exist", card));
+                    return string.Format("Card {0} is not exist", card);
                 }
-                log.Debug(string.Format("Card {0} is not exist", card));
-                return string.Format("Card {0} is not exist", card);
+                else
+                {
+                    return "Invalid card number";
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                return "Invalid card number";
+                log.Error(ex);
             }
+            log.Debug(string.Format("{0} : ending of check existing card process", card));
+            return string.Format("{0} : ending of check existing card", card);
         }
 
 
@@ -71,12 +81,12 @@ namespace CheckEnrollCard.Controllers
                     }
   
                 }
-                else if ( isNum )
+                else if ( !isNum )
                 {
                     log.Info("Can not enrolling the card");
                     return "Invalid card number";
                 }
-                else if ( isExp )
+                else if ( !isExp )
                 {
                     log.Info("Can not enrolling the card");
                     return "Invalid expire date";
@@ -89,10 +99,9 @@ namespace CheckEnrollCard.Controllers
             }
             catch (Exception ex)
             {
-                log.Error(string.Format("Error: {0}", ex));
+                log.Error(ex);
             }
             log.Debug(string.Format("{0} : ending of enroll process", c.cardNum));
-            Console.Read();
             return string.Format("{0} : ending of enroll process", c.cardNum);
         }
         
