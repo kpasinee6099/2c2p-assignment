@@ -1,7 +1,4 @@
-BasicWebService/.vs/
-BasicWebService/BasicWebService/bin/
+CheckEnrollCard/CheckEnrollCard/.vs/*
+CheckEnrollCard/CheckEnrollCard/bin/
 [Bb]in/
 [Oo]bj/
-
-
-*/.vs/
