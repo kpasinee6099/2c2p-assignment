@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CARDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CardRegisted">
+          <Key>
+            <PropertyRef Name="CardNum" />
+          </Key>
+          <Property Name="CardNum" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CardType" Type="varchar" MaxLength="15" />
+          <Property Name="CardStat" Type="varchar" MaxLength="15" />
+          <Property Name="ExpDate" Type="varchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <Function Name="isExistCard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CardNum" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="RegisterCard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CardNum" Type="varchar" Mode="In" />
+          <Parameter Name="CardType" Type="varchar" Mode="In" />
+          <Parameter Name="CardStat" Type="varchar" Mode="In" />
+          <Parameter Name="ExpDate" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="CARDModelStoreContainer">
+          <EntitySet Name="CardRegisted" EntityType="Self.CardRegisted" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CARDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CardRegisted">
+          <Key>
+            <PropertyRef Name="CardNum" />
+          </Key>
+          <Property Name="CardNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CardType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CardStat" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ExpDate" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CARDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CardRegisteds" EntityType="Self.CardRegisted" />
+          <FunctionImport Name="isExistCard" ReturnType="Collection(CARDModel.isExistCard_Result)">
+            <Parameter Name="CardNum" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RegisterCard">
+            <Parameter Name="CardNum" Mode="In" Type="String" />
+            <Parameter Name="CardType" Mode="In" Type="String" />
+            <Parameter Name="CardStat" Mode="In" Type="String" />
+            <Parameter Name="ExpDate" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="isExistCard_Result">
+          <Property Type="String" Name="CardNum" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="CardType" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="CardStat" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="ExpDate" Nullable="false" MaxLength="6" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CARDModelStoreContainer" CdmEntityContainer="CARDEntities">
+          <EntitySetMapping Name="CardRegisteds">
+            <EntityTypeMapping TypeName="CARDModel.CardRegisted">
+              <MappingFragment StoreEntitySet="CardRegisted">
+                <ScalarProperty Name="CardNum" ColumnName="CardNum" />
+                <ScalarProperty Name="CardType" ColumnName="CardType" />
+                <ScalarProperty Name="CardStat" ColumnName="CardStat" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="isExistCard" FunctionName="CARDModel.Store.isExistCard">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CARDModel.isExistCard_Result">
+                <ScalarProperty Name="CardNum" ColumnName="CardNum" />
+                <ScalarProperty Name="CardType" ColumnName="CardType" />
+                <ScalarProperty Name="CardStat" ColumnName="CardStat" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RegisterCard" FunctionName="CARDModel.Store.RegisterCard" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
