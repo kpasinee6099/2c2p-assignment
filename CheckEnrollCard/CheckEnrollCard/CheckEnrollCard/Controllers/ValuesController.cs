@@ -15,8 +15,8 @@ namespace CheckEnrollCard.Controllers
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         ValidateCard vl = new ValidateCard();
         [HttpGet]
-        [Route("api/isEnrolled", Name = "isEnrolled")]
-        public string isEnrolled(string card)
+        [Route("api/IsEnrolled", Name = "IsEnrolled")]
+        public string IsEnrolled(string card)
         {
             string resultMessage = string.Empty;
             try
@@ -27,7 +27,14 @@ namespace CheckEnrollCard.Controllers
                 if (isCardNum)
                 {
                     DBHandle db = new DBHandle();
-                    return resultMessage = db.CheckExistCard(card);
+                    if (db.CheckExistCard(card))
+                    {
+                        return string.Format("Card {0} Existing", card);
+                    }
+                    else{
+                        return string.Format("Card {0} Does not exist", card);
+                    }
+
                 }
                 else
                 {
@@ -43,8 +50,8 @@ namespace CheckEnrollCard.Controllers
         }
 
         [HttpPost]
-        [Route("api/enrollCard", Name = "enrollCard")]
-        public string enrollCard([FromUri]CardInfos card)
+        [Route("api/EnrollCard", Name = "EnrollCard")]
+        public string EnrollCard([FromUri]CardInfos card)
         {
 
             string resultMessage = string.Empty;

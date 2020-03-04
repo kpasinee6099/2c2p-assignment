@@ -118,7 +118,7 @@ namespace CheckEnrollCard.Service
             log.Info("checkCardStat");
             if (cardType.Contains("JCB"))
             {
-                log.Info("JCB");
+                log.Info("JCB's status always Valid");
                 result.cardStat = "Valid";
             }
             else if(cardType.Contains("Visa"))
@@ -126,10 +126,12 @@ namespace CheckEnrollCard.Service
                 log.Info("Visa");
                 if ( year % 4 == 0 )
                 {
+                    log.Info("Visa's status is Valid because expire date is leap year");
                     result.cardStat = "Valid";
                 }
                 else
                 {
+                    log.Info("Visa's status is Invalid because expire date is not leap year");
                     result.cardStat = "Invalid";
                 }
                 
@@ -141,18 +143,20 @@ namespace CheckEnrollCard.Service
                 {
                     if ( ( year % i == 0 ) && ( i != year ) )
                     {
+                        log.Info("MasterCard's status is Invalid because expire date is not prime numeber");
                         result.cardStat = "Invalid";
                         break;
                     }
                     else
                     {
+                        log.Info("MasterCard's status is Valid because expire date is not prime numeber");
                         result.cardStat = "Valid";
                     }
                 }
             }
             else
             {
-                log.Info("Unknown");
+                log.Info("Unknown card is Invalid");
                 result.cardStat = "Invalid";
             }
             return result.cardStat;
