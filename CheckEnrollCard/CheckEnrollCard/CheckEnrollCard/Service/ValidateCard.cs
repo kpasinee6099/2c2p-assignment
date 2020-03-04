@@ -14,7 +14,7 @@ namespace CheckEnrollCard.Service
         CardInfoStat result = new CardInfoStat();
 
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public bool isCardNum(string cardNum)
+        public bool IsCardNumber(string cardNum)
         {
             if (!string.IsNullOrEmpty(cardNum) && !string.IsNullOrWhiteSpace(cardNum))
             {
@@ -36,7 +36,7 @@ namespace CheckEnrollCard.Service
             }
         }
 
-        public bool isExpDate(string expDate)
+        public bool IsExpDate(string expDate)
         {
             if (!string.IsNullOrEmpty(expDate) && !string.IsNullOrWhiteSpace(expDate))
             {
@@ -77,11 +77,11 @@ namespace CheckEnrollCard.Service
             }
         }
 
-        public string checkCardType(string cardNum)
+        public string CheckCardType(string cardNum)
         {
             char type = cardNum[0];
             int digit = cardNum.Length;
-            log.Info("checkCardType");
+            log.Info("CheckCardType");
             switch (type)
             {
                 case '3':
@@ -110,12 +110,12 @@ namespace CheckEnrollCard.Service
             }
             return result.cardType;
         }
-        public string checkCardStat(string expdate)
+        public string CheckCardStat(string expdate)
         {
             string tmpYear = expdate.Substring(2);
             int year = int.Parse(tmpYear);
             string cardType = result.cardType;
-            log.Info("checkCardStat");
+            log.Info("CheckCardStat");
             if (cardType.Contains("JCB"))
             {
                 log.Info("JCB's status always Valid");

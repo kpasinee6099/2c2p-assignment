@@ -22,7 +22,7 @@ namespace CheckEnrollCard.Controllers
             try
             {
                 log.Info("request check existing card");               
-                bool isCardNum = vl.isCardNum(card);
+                bool isCardNum = vl.IsCardNumber(card);
 
                 if (isCardNum)
                 {
@@ -59,15 +59,15 @@ namespace CheckEnrollCard.Controllers
             {
                 log.Info("Enroll the card");
 
-                bool isNum = vl.isCardNum(card.cardNum);
-                bool isExp = vl.isExpDate(card.expDate);
+                bool isNum = vl.IsCardNumber(card.cardNum);
+                bool isExp = vl.IsExpDate(card.expDate);
 
                 if (isNum && isExp)
                 {
 
                     CardInfoStat IdtCard = new CardInfoStat();
-                    IdtCard.cardType = vl.checkCardType(card.cardNum);
-                    IdtCard.cardStat = vl.checkCardStat(card.expDate);
+                    IdtCard.cardType = vl.CheckCardType(card.cardNum);
+                    IdtCard.cardStat = vl.CheckCardStat(card.expDate);
 
                     Result resultCard = new Result()
                     {

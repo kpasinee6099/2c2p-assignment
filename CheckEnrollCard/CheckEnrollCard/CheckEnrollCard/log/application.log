@@ -9,3 +9,65 @@
 2020-03-04 14:33:36,284 INFO CheckEnrollCard.Service.ValidateCard - Visa
 2020-03-04 14:33:36,291 INFO CheckEnrollCard.Service.ValidateCard - Visa's status is Invalid because expire date is not leap year
 2020-03-04 14:33:36,468 INFO CheckEnrollCard.Repository.DBHandle - Enrolling the card successful
+2020-03-04 14:38:16,295 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 14:38:16,306 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:38:25,716 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 14:38:25,722 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:38:25,727 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 14:38:25,734 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 14:38:25,740 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 5
+2020-03-04 14:38:25,746 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-04 14:38:25,753 INFO CheckEnrollCard.Service.ValidateCard - MasterCard
+2020-03-04 14:38:25,758 INFO CheckEnrollCard.Service.ValidateCard - MasterCard's status is Invalid because expire date is not prime numeber
+2020-03-04 14:38:26,005 INFO CheckEnrollCard.Repository.DBHandle - Enrolling the card successful
+2020-03-04 14:38:47,773 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 14:38:47,781 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:38:51,782 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 14:38:51,787 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:38:51,796 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 14:38:51,804 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 14:38:51,812 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 5
+2020-03-04 14:38:51,820 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-04 14:38:51,827 INFO CheckEnrollCard.Service.ValidateCard - MasterCard
+2020-03-04 14:38:51,832 INFO CheckEnrollCard.Service.ValidateCard - MasterCard's status is Invalid because expire date is not prime numeber
+2020-03-04 14:38:51,889 INFO CheckEnrollCard.Repository.DBHandle - Can not enroll the card,It is existing
+2020-03-04 14:39:56,024 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 14:39:56,031 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:40:04,775 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 14:40:04,784 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:40:04,790 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 14:40:04,797 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 14:40:04,805 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is unknown
+2020-03-04 14:40:04,811 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-04 14:40:04,818 INFO CheckEnrollCard.Service.ValidateCard - Unknown card is Invalid
+2020-03-04 14:40:04,994 INFO CheckEnrollCard.Repository.DBHandle - Enrolling the card successful
+2020-03-04 14:44:52,029 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 14:44:52,045 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:45:02,992 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 14:45:02,998 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:45:03,006 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 14:45:03,013 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 14:45:03,021 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 3
+2020-03-04 14:45:03,028 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-04 14:45:03,035 INFO CheckEnrollCard.Service.ValidateCard - JCB's status always Valid
+2020-03-04 14:45:03,277 INFO CheckEnrollCard.Repository.DBHandle - Enrolling the card successful
+2020-03-04 14:49:12,665 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 14:49:12,677 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:49:25,724 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 14:49:25,731 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:49:25,738 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 14:49:25,746 INFO CheckEnrollCard.Service.ValidateCard - CheckCardType
+2020-03-04 14:49:25,754 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 3
+2020-03-04 14:49:25,763 INFO CheckEnrollCard.Service.ValidateCard - CheckCardStat
+2020-03-04 14:49:25,771 INFO CheckEnrollCard.Service.ValidateCard - JCB's status always Valid
+2020-03-04 14:49:26,033 INFO CheckEnrollCard.Repository.DBHandle - Enrolling the card successful
+2020-03-04 14:49:42,500 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 14:49:42,505 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:49:46,917 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 14:49:46,923 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 14:49:46,931 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 14:49:46,938 INFO CheckEnrollCard.Service.ValidateCard - CheckCardType
+2020-03-04 14:49:46,946 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 3
+2020-03-04 14:49:46,954 INFO CheckEnrollCard.Service.ValidateCard - CheckCardStat
+2020-03-04 14:49:46,961 INFO CheckEnrollCard.Service.ValidateCard - JCB's status always Valid
+2020-03-04 14:49:47,021 INFO CheckEnrollCard.Repository.DBHandle - Can not enroll the card,It is existing

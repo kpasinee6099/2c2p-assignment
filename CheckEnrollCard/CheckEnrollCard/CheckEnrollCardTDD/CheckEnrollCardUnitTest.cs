@@ -17,117 +17,117 @@ namespace CheckEnrollCardTDD
         CardInfos testValue = new CardInfos();
         CardInfoStat expecValue = new CardInfoStat();
 
-        /*isCardNum*/
+        /*IsCardNumber*/
         [TestMethod]
-        public void Test00_isCardNum_Format_Of_CardNumber_IsNull_Then_Fail()
+        public void Test00_IsCardNumber_Format_Of_CardNumber_IsNull_Then_Fail()
         {
-            Assert.IsFalse(isCardNum(null));
+            Assert.IsFalse(IsCardNumber(null));
         }
         [TestMethod]
-        public void Test01_isCardNum_Format_Of_CardNumber_IsEmpty_Then_Fail()
+        public void Test01_IsCardNumber_Format_Of_CardNumber_IsEmpty_Then_Fail()
         {
-            Assert.IsFalse(isCardNum(string.Empty));
+            Assert.IsFalse(IsCardNumber(string.Empty));
         }
         [TestMethod]
-        public void Test02_isCardNum_Format_Of_CardNumber_IsContain_WhiteSpace_Then_Fail()
+        public void Test02_IsCardNumber_Format_Of_CardNumber_IsContain_WhiteSpace_Then_Fail()
         {
-            Assert.IsFalse(isCardNum(cardNum16Def.Replace("1"," ")));
+            Assert.IsFalse(IsCardNumber(cardNum16Def.Replace("1"," ")));
         }
         [TestMethod]
-        public void Test03_isCardNum_Format_Of_CardNumber_IsContain_Alphabet_Then_Fail()
+        public void Test03_IsCardNumber_Format_Of_CardNumber_IsContain_Alphabet_Then_Fail()
         {
-            Assert.IsFalse(isCardNum(cardNum16Def.Replace("1234","qwer")));
+            Assert.IsFalse(IsCardNumber(cardNum16Def.Replace("1234","qwer")));
         }
         [TestMethod]
-        public void Test04_isCardNum_Length_Of_CardNumber_IsShorter_Then_Fail()
+        public void Test04_IsCardNumber_Length_Of_CardNumber_IsShorter_Then_Fail()
         {
-            Assert.IsFalse(isCardNum(cardNum16Def.Substring(0,10)));
+            Assert.IsFalse(IsCardNumber(cardNum16Def.Substring(0,10)));
         }
         [TestMethod]
-        public void Test05_isCardNum_Length_Of_CardNumber_IsLonger_Then_Fail()
+        public void Test05_IsCardNumber_Length_Of_CardNumber_IsLonger_Then_Fail()
         {
-            Assert.IsFalse(isCardNum(cardNum16Def+"12345"));
+            Assert.IsFalse(IsCardNumber(cardNum16Def+"12345"));
         }
         [TestMethod]
-        public void Test06_isCardNum_Format_Of_CardNumber_IsNumber_Then_Success()
+        public void Test06_IsCardNumber_Format_Of_CardNumber_IsNumber_Then_Success()
         {
-            Assert.IsTrue(isCardNum(cardNum16Def));
+            Assert.IsTrue(IsCardNumber(cardNum16Def));
         }
         [TestMethod]
-        public void Test07_isCardNum_Length_Of_CardNumber_isInRange15_Then_Success()
+        public void Test07_IsCardNumber_Length_Of_CardNumber_isInRange15_Then_Success()
         {
-            Assert.IsTrue(isCardNum(cardNum15Def));
+            Assert.IsTrue(IsCardNumber(cardNum15Def));
         }
         [TestMethod]
-        public void Test08_isCardNum_Length_Of_CardNumber_isInRange16_Then_Success()
+        public void Test08_IsCardNumber_Length_Of_CardNumber_isInRange16_Then_Success()
         {
-            Assert.IsTrue(isCardNum(cardNum16Def));
+            Assert.IsTrue(IsCardNumber(cardNum16Def));
         }
-        /*isExpDate*/
+        /*IsExpDate*/
         [TestMethod]
-        public void Test09_isExpDate_Format_Of_ExpireDate_IsNull_Then_Fail()
+        public void Test09_IsExpDate_Format_Of_ExpireDate_IsNull_Then_Fail()
         {
-            Assert.IsFalse(isExpDate(null));
-        }
-        [TestMethod]
-        public void Test10_isExpDate_Format_Of_ExpireDate_IsEmpty_Then_Fail()
-        {
-            Assert.IsFalse(isExpDate(string.Empty));
+            Assert.IsFalse(IsExpDate(null));
         }
         [TestMethod]
-        public void Test11_isExpDate_Format_Of_ExpireDate_IsContain_WhiteSpace_Then_Fail()
+        public void Test10_IsExpDate_Format_Of_ExpireDate_IsEmpty_Then_Fail()
         {
-            Assert.IsFalse(isExpDate(expDateDef.Replace("1", " ")));
+            Assert.IsFalse(IsExpDate(string.Empty));
         }
         [TestMethod]
-        public void Test12_isExpDate_Format_Of_ExpireDate_IsContain_Alphabet_Then_Fail()
+        public void Test11_IsExpDate_Format_Of_ExpireDate_IsContain_WhiteSpace_Then_Fail()
         {
-            Assert.IsFalse(isExpDate(expDateDef.Replace("0120","qwer")));
+            Assert.IsFalse(IsExpDate(expDateDef.Replace("1", " ")));
         }
         [TestMethod]
-        public void Test13_isExpDate_Length_Of_ExpireDate_IsShorter_Then_Fail()
+        public void Test12_IsExpDate_Format_Of_ExpireDate_IsContain_Alphabet_Then_Fail()
         {
-            Assert.IsFalse(isExpDate(expDateDef.Substring(0,2)));
+            Assert.IsFalse(IsExpDate(expDateDef.Replace("0120","qwer")));
         }
         [TestMethod]
-        public void Test14_isExpDate_Format_Of_ExpireDate_IsLonger_Then_Fail()
+        public void Test13_IsExpDate_Length_Of_ExpireDate_IsShorter_Then_Fail()
         {
-            Assert.IsFalse(isExpDate(expDateDef+"1234"));
+            Assert.IsFalse(IsExpDate(expDateDef.Substring(0,2)));
         }
         [TestMethod]
-        public void Test15_isExpDate_Month_Of_ExpireDate_IsOutofRange_Then_Fail()
+        public void Test14_IsExpDate_Format_Of_ExpireDate_IsLonger_Then_Fail()
         {
-            Assert.IsFalse(isExpDate(expDateDef.Replace("01","39")));
+            Assert.IsFalse(IsExpDate(expDateDef+"1234"));
         }
         [TestMethod]
-        public void Test16_isExpDate_Year_Of_ExpireDate_IsOutofRange_Then_Fail()
+        public void Test15_IsExpDate_Month_Of_ExpireDate_IsOutofRange_Then_Fail()
         {
-            Assert.IsFalse(isExpDate(expDateDef.Replace("2020", "8765")));
+            Assert.IsFalse(IsExpDate(expDateDef.Replace("01","39")));
         }
         [TestMethod]
-        public void Test17_isExpDate_Year_Of_ExpireDate_IsOutofDate_Then_Fail()
+        public void Test16_IsExpDate_Year_Of_ExpireDate_IsOutofRange_Then_Fail()
         {
-            Assert.IsFalse(isExpDate(expDateDef.Replace("2020", "2011")));
+            Assert.IsFalse(IsExpDate(expDateDef.Replace("2020", "8765")));
         }
         [TestMethod]
-        public void Test18_isExpDate_Format_Of_ExpireDate_IsInRange6_Then_Success()
+        public void Test17_IsExpDate_Year_Of_ExpireDate_IsOutofDate_Then_Fail()
+        {
+            Assert.IsFalse(IsExpDate(expDateDef.Replace("2020", "2011")));
+        }
+        [TestMethod]
+        public void Test18_IsExpDate_Format_Of_ExpireDate_IsInRange6_Then_Success()
         {           
-            Assert.IsTrue(isExpDate(expDateDef));
+            Assert.IsTrue(IsExpDate(expDateDef));
         }
         [TestMethod]
-        public void Test19_isExpDate_Format_Of_ExpireDate_IsNumber_Then_Success()
+        public void Test19_IsExpDate_Format_Of_ExpireDate_IsNumber_Then_Success()
         {
-            Assert.IsTrue(isExpDate(expDateDef));
+            Assert.IsTrue(IsExpDate(expDateDef));
         }
         [TestMethod]
-        public void Test20_isExpDate_Month_Of_ExpireDate_IsInRange_Then_Success()
+        public void Test20_IsExpDate_Month_Of_ExpireDate_IsInRange_Then_Success()
         {
-            Assert.IsTrue(isExpDate(expDateDef));
+            Assert.IsTrue(IsExpDate(expDateDef));
         }
         [TestMethod]
-        public void Test21_isExpDate_Year_Of_ExpireDate_IsUptoDate_Then_Success()
+        public void Test21_IsExpDate_Year_Of_ExpireDate_IsUptoDate_Then_Success()
         {
-            Assert.IsTrue(isExpDate(expDateDef));
+            Assert.IsTrue(IsExpDate(expDateDef));
         }
 
         /*identifyCard*//*JCB Amex Visa MasterCard*/
@@ -138,7 +138,7 @@ namespace CheckEnrollCardTDD
 
             expecValue.cardType = "JCB";
 
-            string resultValue = checkCardType(testValue.cardNum);
+            string resultValue = CheckCardType(testValue.cardNum);
 
             Assert.AreEqual(expecValue.cardType, resultValue);
 
@@ -151,7 +151,7 @@ namespace CheckEnrollCardTDD
 
             expecValue.cardType = "Amex";
 
-            string resultValue = checkCardType(testValue.cardNum);
+            string resultValue = CheckCardType(testValue.cardNum);
 
             Assert.AreEqual(expecValue.cardType, resultValue);
 
@@ -164,7 +164,7 @@ namespace CheckEnrollCardTDD
 
             expecValue.cardType = "Visa";
 
-            string resultValue = checkCardType(testValue.cardNum);
+            string resultValue = CheckCardType(testValue.cardNum);
 
             Assert.AreEqual(expecValue.cardType, resultValue);
 
@@ -177,7 +177,7 @@ namespace CheckEnrollCardTDD
           
             expecValue.cardType = "MasterCard";
 
-            string resultValue = checkCardType(testValue.cardNum);
+            string resultValue = CheckCardType(testValue.cardNum);
 
             Assert.AreEqual(expecValue.cardType, resultValue);
 
@@ -191,8 +191,8 @@ namespace CheckEnrollCardTDD
             expecValue.cardType = "JCB";
             expecValue.cardStat = "Valid";
 
-            string cardType = checkCardType(testValue.cardNum);
-            string resultValue = checkCardStat(testValue.expDate);
+            string cardType = CheckCardType(testValue.cardNum);
+            string resultValue = CheckCardStat(testValue.expDate);
 
             Assert.AreEqual(expecValue.cardStat, resultValue);
         }
@@ -205,8 +205,8 @@ namespace CheckEnrollCardTDD
             expecValue.cardType = "JCB";
             expecValue.cardStat = "Invalid";
 
-            string cardType = checkCardType(testValue.cardNum);
-            string resultValue = checkCardStat(testValue.expDate);
+            string cardType = CheckCardType(testValue.cardNum);
+            string resultValue = CheckCardStat(testValue.expDate);
 
             Assert.AreNotEqual(expecValue.cardStat, resultValue);
         }
@@ -219,8 +219,8 @@ namespace CheckEnrollCardTDD
             expecValue.cardType = "Visa";
             expecValue.cardStat = "Valid";
 
-            string cardType = checkCardType(testValue.cardNum);
-            string resultValue = checkCardStat(testValue.expDate);
+            string cardType = CheckCardType(testValue.cardNum);
+            string resultValue = CheckCardStat(testValue.expDate);
 
             Assert.AreEqual(expecValue.cardStat, resultValue);
         }
@@ -233,8 +233,8 @@ namespace CheckEnrollCardTDD
             expecValue.cardType = "Visa";
             expecValue.cardStat = "Invalid";
 
-            string cardType = checkCardType(testValue.cardNum);
-            string resultValue = checkCardStat(testValue.expDate);
+            string cardType = CheckCardType(testValue.cardNum);
+            string resultValue = CheckCardStat(testValue.expDate);
 
             Assert.AreEqual(expecValue.cardStat, resultValue);
         }
@@ -247,8 +247,8 @@ namespace CheckEnrollCardTDD
             expecValue.cardType = "MasterCard";
             expecValue.cardStat = "Valid";
 
-            string cardType = checkCardType(testValue.cardNum);
-            string resultValue = checkCardStat(testValue.expDate);
+            string cardType = CheckCardType(testValue.cardNum);
+            string resultValue = CheckCardStat(testValue.expDate);
 
             Assert.AreEqual(expecValue.cardStat, resultValue);
         }
@@ -261,8 +261,8 @@ namespace CheckEnrollCardTDD
             expecValue.cardType = "MasterCard";
             expecValue.cardStat = "Invalid";
 
-            string cardType = checkCardType(testValue.cardNum);
-            string resultValue = checkCardStat(testValue.expDate);
+            string cardType = CheckCardType(testValue.cardNum);
+            string resultValue = CheckCardStat(testValue.expDate);
 
             Assert.AreEqual(expecValue.cardStat, resultValue);
         }
@@ -273,7 +273,7 @@ namespace CheckEnrollCardTDD
 
             expecValue.cardType = "Unknown";
 
-            string resultValue = checkCardType(testValue.cardNum);
+            string resultValue = CheckCardType(testValue.cardNum);
 
             Assert.AreEqual(expecValue.cardType, resultValue);
         }
@@ -286,8 +286,8 @@ namespace CheckEnrollCardTDD
             expecValue.cardType = "Unknown";
             expecValue.cardStat = "Invalid";
 
-            string cardType = checkCardType(testValue.cardNum);
-            string resultValue = checkCardStat(testValue.expDate);
+            string cardType = CheckCardType(testValue.cardNum);
+            string resultValue = CheckCardStat(testValue.expDate);
 
             Assert.AreEqual(expecValue.cardStat, resultValue);
         }

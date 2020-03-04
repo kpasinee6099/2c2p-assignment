@@ -79,19 +79,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2020 16:45:05</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>03/04/2020 12:19:02</publishTime>
+      <publishTime>03/04/2020 14:50:13</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>03/04/2020 12:19:02</publishTime>
+      <publishTime>03/04/2020 14:50:13</publishTime>
     </File>
     <File Include="bin/App_global.asax.pdb">
-      <publishTime>03/04/2020 12:19:02</publishTime>
+      <publishTime>03/04/2020 14:50:13</publishTime>
     </File>
     <File Include="bin/CheckEnrollCard.dll">
-      <publishTime>03/04/2020 12:18:56</publishTime>
+      <publishTime>03/04/2020 14:50:08</publishTime>
     </File>
     <File Include="bin/CheckEnrollCard.pdb">
-      <publishTime>03/04/2020 12:18:56</publishTime>
+      <publishTime>03/04/2020 14:50:08</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2020 16:45:06</publishTime>
@@ -337,7 +337,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2020 16:45:05</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>03/04/2020 12:18:57</publishTime>
+      <publishTime>03/04/2020 14:50:08</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>03/02/2020 16:45:05</publishTime>
