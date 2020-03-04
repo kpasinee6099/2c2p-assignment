@@ -21,11 +21,24 @@ namespace CheckEnrollCard.Models
         public string cardNum { get; set; }
         public string expDate { get; set; }
 
+        public CardInfos()
+        {
+            this.cardNum = string.Empty;
+            this.expDate = string.Empty;
+        }
+
     }
     public class CardInfoStat
     {
         public string cardType { get; set; }
         public string cardStat { get; set; }
+
+        public CardInfoStat()
+        {
+            this.cardStat = "Invalid";
+            this.cardType = "Unknown";
+            
+        }
 
     }
 

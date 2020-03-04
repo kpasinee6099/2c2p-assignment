@@ -10,124 +10,153 @@ namespace CheckEnrollCard.Service
     
     public class ValidateCard
     {
+
+        CardInfoStat result = new CardInfoStat();
+
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public bool isCardNum(string cardNum)
         {
-            if (Regex.IsMatch(cardNum, @"^\d+$") && (cardNum.Length > 0 && (cardNum.Length == 15 || cardNum.Length == 16)))
+            if (!string.IsNullOrEmpty(cardNum) && !string.IsNullOrWhiteSpace(cardNum))
             {
-                log.Info("Format card of number is allowed");
-                return true;
+                if (Regex.IsMatch(cardNum, @"^\d+$") && cardNum.Length > 0 && (cardNum.Length == 15 || cardNum.Length == 16) )
+                {
+                    log.Info("Format card of number is allowed");
+                    return true;
+                }
+                else
+                {
+                    log.Debug(string.Format("Card number's  : {0}", cardNum));
+                    log.Debug(string.Format("Card number's length : {0}", cardNum.Length));
+                    return false;
+                }
             }
             else
             {
-                log.Debug(string.Format("Card number's  : {0}", cardNum));
-                log.Debug(string.Format("Card number's length : {0}", cardNum.Length));
                 return false;
             }
         }
 
         public bool isExpDate(string expDate)
         {
-            if (expDate.Length == 6)
+            if (!string.IsNullOrEmpty(expDate) && !string.IsNullOrWhiteSpace(expDate))
             {
-                string month = expDate.Substring(0, 2);
-                string year = expDate.Substring(2, 4);
-                if (Regex.IsMatch(expDate, @"^\d+$"))
+                if (expDate.Length == 6)
                 {
-                    if ( ( year.StartsWith("2") && year[1] == '0' ) 
-                        && ( Convert.ToInt16( year.Substring( 2 , 2 ) ) >= 20 )  
-                        && (Convert.ToInt16(month) > 0 && Convert.ToInt16(month) <= 12) )
+                    string month = expDate.Substring(0, 2);
+                    string year = expDate.Substring(2, 4);
+                    if (Regex.IsMatch(expDate, @"^\d+$"))
                     {
-                        log.Info("Format of expire date is allowed");
-                        return true;
+                        if ((year.StartsWith("2") && year[1] == '0')
+                            && (Convert.ToInt16(year.Substring(2, 2)) >= 20)
+                            && (Convert.ToInt16(month) > 0 && Convert.ToInt16(month) <= 12))
+                        {
+                            log.Info("Format of expire date is allowed");
+                            return true;
+                        }
+                        else
+                        {
+                            log.Debug(string.Format("Expire date : {0} is not allowed, month {1} / year {2}", expDate, month, year));
+                            return false;
+                        }
                     }
                     else
                     {
-                        log.Debug(string.Format("Expire date : {0} is not allowed, month {1} / year {2}", expDate , month , year));
+                        log.Debug(string.Format("Expire date : {0} is not allowed, Digit pls", expDate));
                         return false;
                     }
                 }
                 else
                 {
-                    log.Debug(string.Format("Expire date : {0} is not allowed, Digit pls", expDate));
+                    log.Debug(string.Format("Expire date : {0} is not allowed, 6-digit pls", expDate));
                     return false;
                 }
             }
             else
             {
-                log.Debug(string.Format("Expire date : {0} is not allowed, 6-digit pls", expDate));
                 return false;
             }
         }
 
-        public CardInfoStat identifyCard( CardInfos card )
+        public string checkCardType(string cardNum)
         {
-            CardInfoStat result = new CardInfoStat();
-            result.cardStat = "Invalid";
-            result.cardType = "Unknown";
-
-            string tmpYear = card.expDate.Substring(2);
-            int year = int.Parse(tmpYear);
-            
-            char type = card.cardNum[0];
+            char type = cardNum[0];
+            int digit = cardNum.Length;
+            log.Info("checkCardType");
             switch (type)
             {
                 case '3':
                     log.Info("In case of card number is start with 3");
-                    int digit = card.cardNum.Length;
                     if (digit == 16)
                     {
                         result.cardType = "JCB";
-                        result.cardStat = "Valid";
-                        
-                    }
-                    else if (digit == 15)
-                    {
-                        result.cardType = "Amex";
                     }
                     else
                     {
-                        result.cardType = "Unknown";
+                        result.cardType = "Amex";
                     }
-
-                    
                     break;
-
                 case '4':
                     log.Info("In case of card number is start with 4");
                     result.cardType = "Visa";
-                    if (year % 4 == 0)
-                    {
-                        result.cardStat = "Valid";
-                    }
-                    
                     break;
-
                 case '5':
                     log.Info("In case of card number is start with 5");
-                    result.cardType = "MasterCard";
-                    for (int i = 2; i <= year; i++)
-                    {
-                        if (year % i == 0)
-                        {
-                            result.cardStat = "Invalid";
-                        }
-                        else
-                        {
-                            result.cardStat = "Valid";
-                        }
-                    }
-                    
+                    result.cardType = "MasterCard";                   
                     break;
-
                 default:
                     log.Info("In case of card number is unknown");
                     result.cardType = "Unknown";
-                    
                     break;
-                    
             }
-            return result;
+            return result.cardType;
         }
+        public string checkCardStat(string expdate)
+        {
+            string tmpYear = expdate.Substring(2);
+            int year = int.Parse(tmpYear);
+            string cardType = result.cardType;
+            log.Info("checkCardStat");
+            if (cardType.Contains("JCB"))
+            {
+                log.Info("JCB");
+                result.cardStat = "Valid";
+            }
+            else if(cardType.Contains("Visa"))
+            {
+                log.Info("Visa");
+                if ( year % 4 == 0 )
+                {
+                    result.cardStat = "Valid";
+                }
+                else
+                {
+                    result.cardStat = "Invalid";
+                }
+                
+            }
+            else if (cardType.Contains("MasterCard"))
+            {
+                log.Info("MasterCard");
+                for (int i = 2; i <= year; i++)
+                {
+                    if ( ( year % i == 0 ) && ( i != year ) )
+                    {
+                        result.cardStat = "Invalid";
+                        break;
+                    }
+                    else
+                    {
+                        result.cardStat = "Valid";
+                    }
+                }
+            }
+            else
+            {
+                log.Info("Unknown");
+                result.cardStat = "Invalid";
+            }
+            return result.cardStat;
+        }
+
     }      
 }

@@ -94,3 +94,212 @@ The statement has been terminated.
 2020-03-02 16:18:43,020 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
 2020-03-02 16:18:46,496 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
 2020-03-02 16:18:56,352 DEBUG CheckEnrollCard.Controllers.ValuesController - Card 321654987412589 is existing
+2020-03-03 14:10:14,548 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-03 14:10:14,560 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 14:10:15,010 DEBUG CheckEnrollCard.Controllers.ValuesController - Card 478956321456987 is not exist
+2020-03-03 14:10:30,768 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-03 14:10:30,774 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 14:10:30,780 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-03 14:10:30,786 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 4
+2020-03-03 14:10:30,791 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-03 14:10:30,798 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 14:10:30,854 DEBUG CheckEnrollCard.Controllers.ValuesController - Card 478956321456987 is not exist
+2020-03-03 14:10:30,985 INFO CheckEnrollCard.Controllers.ValuesController - Enrolling the card successful
+2020-03-03 17:51:37,111 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-03 17:51:37,118 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 17:51:37,549 DEBUG CheckEnrollCard.Controllers.ValuesController - Card 4123456789123456 is not exist
+2020-03-03 17:52:12,063 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-03 17:52:12,069 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 17:52:12,075 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-03 17:54:12,207 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-03 17:54:12,219 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 17:54:12,679 DEBUG CheckEnrollCard.Controllers.ValuesController - Card 478945612345678 is not exist
+2020-03-03 17:54:25,467 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-03 17:54:25,474 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 17:54:25,479 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-03 17:54:41,090 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-03 17:54:43,865 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 4
+2020-03-03 17:55:00,234 ERROR CheckEnrollCard.Controllers.ValuesController - System.OverflowException: Value was either too large or too small for an Int32.
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CheckEnrollCard.Service.ValidateCard.checkCardStat(String expdate) in D:\2c2p-assignment\CheckEnrollCard\CheckEnrollCard\CheckEnrollCard\Service\ValidateCard.cs:line 121
+   at CheckEnrollCard.Controllers.ValuesController.enrollCard(CardInfos c) in D:\2c2p-assignment\CheckEnrollCard\CheckEnrollCard\CheckEnrollCard\Controllers\ValuesController.cs:line 70
+2020-03-03 17:55:41,726 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-03 17:55:41,738 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 17:55:42,181 DEBUG CheckEnrollCard.Controllers.ValuesController - Card 3123456789123456 is not exist
+2020-03-03 17:55:52,528 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-03 17:55:52,541 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 17:55:52,553 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-03 17:55:59,132 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-03 17:56:00,021 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 3
+2020-03-03 17:56:39,790 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-03 17:56:41,609 INFO CheckEnrollCard.Service.ValidateCard - JCB
+2020-03-03 18:18:40,586 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-03 18:18:40,599 DEBUG CheckEnrollCard.Service.ValidateCard - Card number's  : 789456123456
+2020-03-03 18:18:40,605 DEBUG CheckEnrollCard.Service.ValidateCard - Card number's length : 12
+2020-03-03 18:18:49,387 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-03 18:18:49,394 DEBUG CheckEnrollCard.Service.ValidateCard - Card number's  : 7894561234565
+2020-03-03 18:18:49,400 DEBUG CheckEnrollCard.Service.ValidateCard - Card number's length : 13
+2020-03-03 18:19:16,844 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-03 18:19:16,850 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 18:19:17,304 DEBUG CheckEnrollCard.Controllers.ValuesController - Card 7894561234565456 is not exist
+2020-03-03 18:19:34,694 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-03 18:19:34,699 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 18:19:34,706 DEBUG CheckEnrollCard.Service.ValidateCard - Expire date : 132121 is not allowed, month 13 / year 2121
+2020-03-03 18:19:40,135 INFO CheckEnrollCard.Controllers.ValuesController - Can not enrolling the card
+2020-03-03 18:19:51,075 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-03 18:19:51,081 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-03 18:19:51,088 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-03 18:19:51,098 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-03 18:19:51,106 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is unknown
+2020-03-03 18:19:51,114 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-03 18:19:51,120 INFO CheckEnrollCard.Service.ValidateCard - Unknown
+2020-03-03 18:19:51,258 INFO CheckEnrollCard.Controllers.ValuesController - Enrolling the card successful
+2020-03-04 11:14:44,295 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 11:14:44,306 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:14:45,589 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is not exist
+2020-03-04 11:14:45,594 DEBUG CheckEnrollCard.Controllers.ValuesController - 3123456789123456 : ending of check existing card process
+2020-03-04 11:15:10,738 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 11:15:30,280 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:16:02,075 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is not exist
+2020-03-04 11:16:49,834 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 11:16:52,980 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:16:54,258 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is not exist
+2020-03-04 11:17:16,124 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 11:17:16,132 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:17:16,139 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 11:17:16,173 ERROR CheckEnrollCard.Controllers.ValuesController - System.NullReferenceException: Object reference not set to an instance of an object.
+   at CheckEnrollCard.Controllers.ValuesController.enrollCard(CardInfos card) in D:\2c2p-assignment\CheckEnrollCard\CheckEnrollCard\CheckEnrollCard\Controllers\ValuesController.cs:line 65
+2020-03-04 11:17:16,183 DEBUG CheckEnrollCard.Controllers.ValuesController - 3123456789123456 : ending of enroll process
+2020-03-04 11:17:57,132 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 11:18:02,492 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:18:03,423 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 11:18:24,142 ERROR CheckEnrollCard.Controllers.ValuesController - System.NullReferenceException: Object reference not set to an instance of an object.
+   at CheckEnrollCard.Controllers.ValuesController.enrollCard(CardInfos card) in D:\2c2p-assignment\CheckEnrollCard\CheckEnrollCard\CheckEnrollCard\Controllers\ValuesController.cs:line 65
+2020-03-04 11:18:25,384 DEBUG CheckEnrollCard.Controllers.ValuesController - 3123456789123457 : ending of enroll process
+2020-03-04 11:18:40,405 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 11:18:42,860 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:18:43,093 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 11:18:58,841 ERROR CheckEnrollCard.Controllers.ValuesController - System.NullReferenceException: Object reference not set to an instance of an object.
+   at CheckEnrollCard.Controllers.ValuesController.enrollCard(CardInfos card) in D:\2c2p-assignment\CheckEnrollCard\CheckEnrollCard\CheckEnrollCard\Controllers\ValuesController.cs:line 65
+2020-03-04 11:22:45,029 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 11:22:48,438 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:22:49,761 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is not exist
+2020-03-04 11:23:00,262 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 11:23:03,358 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:23:03,516 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 11:23:17,802 ERROR CheckEnrollCard.Controllers.ValuesController - System.NullReferenceException: Object reference not set to an instance of an object.
+   at CheckEnrollCard.Controllers.ValuesController.enrollCard(CardInfos card) in D:\2c2p-assignment\CheckEnrollCard\CheckEnrollCard\CheckEnrollCard\Controllers\ValuesController.cs:line 71
+2020-03-04 11:23:23,486 DEBUG CheckEnrollCard.Controllers.ValuesController - 3123456789123456 : ending of enroll process
+2020-03-04 11:34:11,990 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 11:34:15,642 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:34:16,975 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is not exist
+2020-03-04 11:34:46,313 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 11:34:49,949 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:34:50,178 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 11:35:06,219 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 11:35:06,712 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 3
+2020-03-04 11:35:14,651 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 11:35:14,658 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is unknown
+2020-03-04 11:35:56,303 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 11:36:00,379 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:36:02,271 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is not exist
+2020-03-04 11:36:25,752 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 11:36:31,224 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:36:31,742 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 11:36:33,968 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 11:36:33,984 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 3
+2020-03-04 11:36:51,558 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-04 11:36:53,158 INFO CheckEnrollCard.Service.ValidateCard - JCB
+2020-03-04 11:37:23,607 INFO CheckEnrollCard.Repository.DBHandle - Enrolling the card successful
+2020-03-04 11:37:49,806 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 11:37:49,813 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:37:49,875 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is existing
+2020-03-04 11:50:35,702 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 11:50:35,715 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:50:36,913 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is existing
+2020-03-04 11:50:50,517 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 11:50:50,522 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:50:50,529 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 11:50:50,537 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 11:50:50,546 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 3
+2020-03-04 11:50:50,556 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-04 11:50:50,565 INFO CheckEnrollCard.Service.ValidateCard - JCB
+2020-03-04 11:51:01,207 ERROR CheckEnrollCard.Controllers.ValuesController - System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_CardRegisted'. Cannot insert duplicate key in object 'dbo.CardRegisted'. The duplicate key value is (3123456789123456).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunctionCommand(EntityCommand entityCommand)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass4b.<ExecuteFunction>b__4a()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass4b.<ExecuteFunction>b__49()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteFunction(String functionName, ObjectParameter[] parameters)
+   at CheckEnrollCard.CARDEntities.RegisterCard(String cardNum, String cardType, String cardStat, String expDate) in D:\2c2p-assignment\CheckEnrollCard\CheckEnrollCard\CheckEnrollCard\CARDEntities.Context.cs:line 59
+   at CheckEnrollCard.Repository.DBHandle.RegisterCard(Result resultCard) in D:\2c2p-assignment\CheckEnrollCard\CheckEnrollCard\CheckEnrollCard\Repository\DBHandle.cs:line 28
+   at CheckEnrollCard.Controllers.ValuesController.enrollCard(CardInfos card) in D:\2c2p-assignment\CheckEnrollCard\CheckEnrollCard\CheckEnrollCard\Controllers\ValuesController.cs:line 72
+2020-03-04 11:51:01,222 DEBUG CheckEnrollCard.Controllers.ValuesController - 3123456789123456 : ending of enroll process
+2020-03-04 11:51:17,196 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 11:51:17,210 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:51:17,230 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 11:51:35,233 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 11:51:36,868 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 3
+2020-03-04 11:51:49,368 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-04 11:51:49,376 INFO CheckEnrollCard.Service.ValidateCard - JCB
+2020-03-04 11:52:07,650 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-04 11:52:09,656 INFO CheckEnrollCard.Service.ValidateCard - JCB
+2020-03-04 11:58:42,008 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 11:58:42,021 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:58:43,203 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is existing
+2020-03-04 11:58:53,628 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 11:58:53,633 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 11:58:53,641 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 11:58:59,031 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 11:58:59,049 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 3
+2020-03-04 11:58:59,061 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-04 11:58:59,069 INFO CheckEnrollCard.Service.ValidateCard - JCB
+2020-03-04 11:58:59,136 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is existing
+2020-03-04 11:58:59,145 INFO CheckEnrollCard.Repository.DBHandle - Can not enroll the card,It is existing
+2020-03-04 12:00:28,955 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 12:00:28,961 DEBUG CheckEnrollCard.Service.ValidateCard - Card number's  : 3123456789123456 
+2020-03-04 12:00:28,968 DEBUG CheckEnrollCard.Service.ValidateCard - Card number's length : 17
+2020-03-04 12:00:31,275 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 12:00:31,282 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 12:00:31,341 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123456 is existing
+2020-03-04 12:00:37,196 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 12:00:37,203 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 12:00:37,264 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123459 is not exist
+2020-03-04 12:00:42,671 INFO CheckEnrollCard.Controllers.ValuesController - Enroll the card
+2020-03-04 12:00:42,680 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 12:00:42,688 INFO CheckEnrollCard.Service.ValidateCard - Format of expire date is allowed
+2020-03-04 12:00:49,102 INFO CheckEnrollCard.Service.ValidateCard - checkCardType
+2020-03-04 12:00:49,109 INFO CheckEnrollCard.Service.ValidateCard - In case of card number is start with 3
+2020-03-04 12:00:49,117 INFO CheckEnrollCard.Service.ValidateCard - checkCardStat
+2020-03-04 12:00:49,124 INFO CheckEnrollCard.Service.ValidateCard - JCB
+2020-03-04 12:00:49,185 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123459 is not exist
+2020-03-04 12:00:49,340 INFO CheckEnrollCard.Repository.DBHandle - Enrolling the card successful
+2020-03-04 12:00:58,907 INFO CheckEnrollCard.Controllers.ValuesController - request check existing card
+2020-03-04 12:00:58,913 INFO CheckEnrollCard.Service.ValidateCard - Format card of number is allowed
+2020-03-04 12:00:58,972 DEBUG CheckEnrollCard.Repository.DBHandle - Card 3123456789123459 is existing
